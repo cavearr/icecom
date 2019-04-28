@@ -1,0 +1,11 @@
+prefix=/home/carl/workspace/github/icecom/libs/libftdi
+exec_prefix=/home/carl/workspace/github/icecom/libs/libftdi/bin
+libdir=/home/carl/workspace/github/icecom/libs/libftdi/lib
+includedir=/home/carl/workspace/github/icecom/libs/libftdi/include/libftdi1
+
+Name: libftdipp1
+Description: C++ wrapper for libftdi1
+Requires: libftdi1
+Version: 1.4
+Libs: -L${libdir} -lftdipp1
+Cflags: -I${includedir}
