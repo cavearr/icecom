@@ -173,8 +173,11 @@ int main(int argc, char **argv)
             //       1s       ------- x bytes
             //
             //       x= 800/cpu_time_used
-           fprintf(stderr, "\ntTime spent %lds ( %lfKB/s) => %ldbps\n", secs_used,(double)(baudtimer/secs_used  )/1024,(long)round((baudtimer/secs_used)*8)) ;
-            fflush(stderr);
+            if(secs_used>0.0)
+            {
+                fprintf(stderr, "\ntTime spent %lds ( %lfKB/s) => %ldbps\n", secs_used,(double)(baudtimer/secs_used  )/1024,(long)round((baudtimer/secs_used)*8)) ;
+                fflush(stderr);
+            }
             baudtimer=0;
             gettimeofday(&start, NULL);
         }
@@ -191,7 +194,7 @@ int main(int argc, char **argv)
             //usleep(8);
         }else if(f> 0 && !do_write)
         {
-           // printf("%x ",buf[0]);
+            printf("%x ",buf[0]);
             baudtimer++;
         }
     }

@@ -52,4 +52,11 @@ Ejecutamos como ./test6 -i 2
 
 2 es la uart a usar en nuestro caso con el módulo de la colección jedi el 2, hay que probar si en otros equipos y alhambras es la 2 también.
 
+## Ejercicio 7 - serial test
+
+gcc  test7.c  -I/home/carl/workspace/github/icecom/libs/libftdi/include/libftdi1/ -lftdi1 `pkg-config --libs --cflags libusb-1.0` -g -lm -o test7
+
+./test7 -i 2 -b 12000000 > salida.out
+
+Se llega prácticamente al megabyte por segundo
 
